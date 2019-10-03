@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import fakePosts from 'src/fakes/fake-post';
 
 @Component({
   selector: 'app-post-list',
@@ -7,13 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  posts = [
-    {id: 'asfas234234', body: 'AAAA'},
-    {id: '3jh4j5g345gh2g3h45g', body: 'BBBB'},
-    ];
+  posts = fakePosts;
 
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
