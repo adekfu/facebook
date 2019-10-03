@@ -1,12 +1,12 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
-import {PostListComponent} from './post-list.component';
-import {PostListItemComponent} from '../post-list-item/post-list-item.component';
-import fakePosts from 'src/fakes/fake-post';
-import {RouterTestingModule} from '@angular/router/testing';
-import {SharedModule} from '../../../shared/shared.module';
+import {PostListComponent} from "./post-list.component";
+import {PostListItemComponent} from "../post-list-item/post-list-item.component";
+import fakePosts from "src/fakes/fake-post";
+import {RouterTestingModule} from "@angular/router/testing";
+import {SharedModule} from "../../../shared/shared.module";
 
-describe('PostListComponent', () => {
+describe("PostListComponent", () => {
   let component: PostListComponent;
   let fixture: ComponentFixture<PostListComponent>;
   let $component = null;
@@ -32,7 +32,7 @@ describe('PostListComponent', () => {
     $component.remove();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

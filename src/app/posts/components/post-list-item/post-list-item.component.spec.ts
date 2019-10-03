@@ -1,10 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PostListItemComponent } from './post-list-item.component';
-import {RouterTestingModule} from '@angular/router/testing';
-import {SharedModule} from '../../../shared/shared.module';
+import { PostListItemComponent } from "./post-list-item.component";
+import {RouterTestingModule} from "@angular/router/testing";
+import {SharedModule} from "../../../shared/shared.module";
 
-describe('PostListItemComponent', () => {
+describe("PostListItemComponent", () => {
   let component: PostListItemComponent;
   let fixture: ComponentFixture<PostListItemComponent>;
   let $component = null;
@@ -28,7 +28,7 @@ describe('PostListItemComponent', () => {
     $component.remove();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

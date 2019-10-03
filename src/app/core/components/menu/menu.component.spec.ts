@@ -1,9 +1,9 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
-import {MenuComponent} from './menu.component';
-import {RouterTestingModule} from '@angular/router/testing';
+import {MenuComponent} from "./menu.component";
+import {RouterTestingModule} from "@angular/router/testing";
 
-describe('MenuComponent', () => {
+describe("MenuComponent", () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
   let $component = null;
@@ -27,7 +27,7 @@ describe('MenuComponent', () => {
     $component.remove();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
