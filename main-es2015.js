@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <h1>Facebook</h1>\n  <app-menu></app-menu>\n  <router-outlet></router-outlet>\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-xl-6 col-lg-6 col-md-8 col-sm-12 mx-auto\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n</div>\n\n\n");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav>\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">Home</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/not-found-page\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">Not found</a>\n    </li>\n  </ul>\n</nav>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar bg-primary\">\n  <h1 class=\"text-white\">Facebook</h1>\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <a class=\"nav-link text-white\" routerLink=\"/\" routerLinkActive=\"bg-danger\" [routerLinkActiveOptions]=\"{exact: true}\">Home</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link text-white\" routerLink=\"/not-found-page\" routerLinkActive=\"bg-danger\" [routerLinkActiveOptions]=\"{exact: true}\">Not found\n      </a>\n    </li>\n  </ul>\n</nav>\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>HOME PAGE</h1>\n<app-post-list></app-post-list>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-post-list [posts]=\"posts\"></app-post-list>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\" style=\"width: 18rem;\">\n  <!--<img src=\"...\" class=\"card-img-top\" alt=\"...\">-->\n  <div class=\"card-body\" appHighlight>\n    <h5 class=\"card-title\">{{post.id}}</h5>\n    <p class=\"card-text\">{{post.body}}</p>\n<!--    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>-->\n  </div>\n</div>\n\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-container *ngIf=\"post\">\n  <div class=\"card my-3\">\n    <div class=\"card-header d-flex align-items-start\">\n      <img\n        [src]=\"getPostAuthorAvatarUrl()\"\n        class=\"avatar mr-3 rounded\"\n        alt\n      >\n      <div class=\"flex-fill\">\n        <h4>{{ post?.author?.name }}</h4>\n        <a [routerLink]=\"getPostUrl()\">\n          <small>{{ post.createdTime | myDate }}</small>\n        </a>\n      </div>\n    </div>\n\n    <div class=\"card-body\">\n      <img [src]=\"post.images[0]\" class=\"card-img-top\" alt=\"...\">\n      <div class=\"card-body\" appHighlight>\n        <h5 class=\"card-title\">{{post.id}}</h5>\n        <p class=\"card-text\">{{post.body}}</p>\n      </div>\n    </div>\n  </div>\n</ng-container>\n\n\n\n\n\n\n");
 
 /***/ }),
 
@@ -359,12 +359,12 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppComponent = class AppComponent {
     constructor() {
-        this.title = 'facebook';
+        this.title = "facebook";
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-root',
+        selector: "app-root",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/components/app/app.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.scss */ "./src/app/core/components/app/app.component.scss")).default]
     })
@@ -408,7 +408,7 @@ let MenuComponent = class MenuComponent {
 };
 MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-menu',
+        selector: "app-menu",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/components/menu/menu.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./menu.component.scss */ "./src/app/core/components/menu/menu.component.scss")).default]
     })
@@ -440,11 +440,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
+        path: "",
         component: _pages_home_page_home_page_component__WEBPACK_IMPORTED_MODULE_3__["HomePageComponent"]
     },
     {
-        path: '**',
+        path: "**",
         component: _pages_not_found_page_not_found_page_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundPageComponent"]
     }
 ];
@@ -538,13 +538,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageComponent", function() { return HomePageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _posts_services_posts_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../posts/services/posts.service */ "./src/app/posts/services/posts.service.ts");
+
 
 
 let HomePageComponent = class HomePageComponent {
-    constructor() { }
+    constructor(postsService) {
+        this.postsService = postsService;
+        this.posts = null;
+    }
     ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.setupPosts();
+        });
+    }
+    setupPosts() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.posts = yield this.postsService.getPosts();
+        });
     }
 };
+HomePageComponent.ctorParameters = () => [
+    { type: _posts_services_posts_service__WEBPACK_IMPORTED_MODULE_2__["PostsService"] }
+];
 HomePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-home-page',
@@ -591,7 +607,7 @@ let NotFoundPageComponent = class NotFoundPageComponent {
 };
 NotFoundPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-not-found-page',
+        selector: "app-not-found-page",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./not-found-page.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/pages/not-found-page/not-found-page.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./not-found-page.component.scss */ "./src/app/core/pages/not-found-page/not-found-page.component.scss")).default]
     })
@@ -634,13 +650,25 @@ let PostListItemComponent = class PostListItemComponent {
     }
     ngOnInit() {
     }
+    getPostUrl() {
+        if (this.post) {
+            return `/posts/${this.post.id}`;
+        }
+        return "";
+    }
+    getPostAuthorAvatarUrl() {
+        if (this.post && this.post.author) {
+            return this.post.author.avatarUrl;
+        }
+        return "";
+    }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], PostListItemComponent.prototype, "post", void 0);
 PostListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-post-list-item',
+        selector: "app-post-list-item",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./post-list-item.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/posts/components/post-list-item/post-list-item.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./post-list-item.component.scss */ "./src/app/posts/components/post-list-item/post-list-item.component.scss")).default]
     })
@@ -679,17 +707,17 @@ __webpack_require__.r(__webpack_exports__);
 
 let PostListComponent = class PostListComponent {
     constructor() {
-        this.posts = [
-            { id: 'asfas234234', body: 'AAAA' },
-            { id: '3jh4j5g345gh2g3h45g', body: 'BBBB' },
-        ];
+        this.posts = null;
     }
     ngOnInit() {
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PostListComponent.prototype, "posts", void 0);
 PostListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-post-list',
+        selector: "app-post-list",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./post-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/posts/components/post-list/post-list.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./post-list.component.scss */ "./src/app/posts/components/post-list/post-list.component.scss")).default]
     })
@@ -746,6 +774,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_post_list_post_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/post-list/post-list.component */ "./src/app/posts/components/post-list/post-list.component.ts");
 /* harmony import */ var _components_post_list_item_post_list_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/post-list-item/post-list-item.component */ "./src/app/posts/components/post-list-item/post-list-item.component.ts");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 
@@ -762,10 +792,56 @@ PostsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _posts_routing_module__WEBPACK_IMPORTED_MODULE_3__["PostsRoutingModule"],
-            _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"]
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
         ]
     })
 ], PostsModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/posts/services/posts.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/posts/services/posts.service.ts ***!
+  \*************************************************/
+/*! exports provided: PostsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostsService", function() { return PostsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _shared_helpers_sorter_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/helpers/sorter.helper */ "./src/app/shared/helpers/sorter.helper.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+
+let PostsService = class PostsService {
+    constructor(http) {
+        this.http = http;
+    }
+    getPosts() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const url = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].postsUrl;
+            const response = yield this.http.get(url).pipe(Object(_shared_helpers_sorter_helper__WEBPACK_IMPORTED_MODULE_3__["sortByOperator"])('createdTime')).toPromise();
+            return response;
+        });
+    }
+};
+PostsService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+PostsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PostsService);
 
 
 
@@ -791,16 +867,16 @@ let HighlightDirective = class HighlightDirective {
         this.renderer = renderer;
     }
     mouseOverHandler() {
-        console.log('mouseover');
+        console.log("mouseover");
         const $element = this.element.nativeElement;
-        this.renderer.addClass($element, 'border');
-        this.renderer.addClass($element, 'border-primary');
+        this.renderer.addClass($element, "border");
+        this.renderer.addClass($element, "border-primary");
     }
     mouseLeaveHandler() {
-        console.log('mouseleave');
+        console.log("mouseleave");
         const $element = this.element.nativeElement;
-        this.renderer.removeClass($element, 'border');
-        this.renderer.removeClass($element, 'border-primary');
+        this.renderer.removeClass($element, "border");
+        this.renderer.removeClass($element, "border-primary");
     }
 };
 HighlightDirective.ctorParameters = () => [
@@ -808,16 +884,87 @@ HighlightDirective.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseover')
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])("mouseover")
 ], HighlightDirective.prototype, "mouseOverHandler", null);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseleave')
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])("mouseleave")
 ], HighlightDirective.prototype, "mouseLeaveHandler", null);
 HighlightDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
-        selector: '[appHighlight]'
+        selector: "[appHighlight]"
     })
 ], HighlightDirective);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/helpers/sorter.helper.ts":
+/*!*************************************************!*\
+  !*** ./src/app/shared/helpers/sorter.helper.ts ***!
+  \*************************************************/
+/*! exports provided: sortBy, sortByOperator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortBy", function() { return sortBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByOperator", function() { return sortByOperator; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+function sortBy(collection, mapTo) {
+    return collection.sort((item1, item2) => mapTo(item2).getTime() - mapTo(item1).getTime());
+}
+function sortByOperator(key) {
+    return Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((list) => {
+        return sortBy(list, (item) => {
+            return new Date(item[key]);
+        });
+    });
+}
+
+
+/***/ }),
+
+/***/ "./src/app/shared/pipes/my-date.pipe.ts":
+/*!**********************************************!*\
+  !*** ./src/app/shared/pipes/my-date.pipe.ts ***!
+  \**********************************************/
+/*! exports provided: MyDatePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyDatePipe", function() { return MyDatePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let MyDatePipe = class MyDatePipe {
+    transform(dateString) {
+        if (dateString) {
+            const date = new Date(dateString);
+            if (isNaN.call(null, date)) {
+                return "";
+            }
+            return date.toLocaleDateString("pl-pl", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+        }
+        return ``;
+    }
+};
+MyDatePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: "myDate"
+    })
+], MyDatePipe);
 
 
 
@@ -837,6 +984,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./directives/highlight.directive */ "./src/app/shared/directives/highlight.directive.ts");
+/* harmony import */ var _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pipes/my-date.pipe */ "./src/app/shared/pipes/my-date.pipe.ts");
+
 
 
 
@@ -845,8 +994,8 @@ let SharedModule = class SharedModule {
 };
 SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__["HighlightDirective"]],
-        exports: [_directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__["HighlightDirective"]],
+        declarations: [_directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__["HighlightDirective"], _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__["MyDatePipe"]],
+        exports: [_directives_highlight_directive__WEBPACK_IMPORTED_MODULE_3__["HighlightDirective"], _pipes_my_date_pipe__WEBPACK_IMPORTED_MODULE_4__["MyDatePipe"]],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
         ]
@@ -873,7 +1022,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: false
+    production: false,
+    postsUrl: 'assets/fake-posts.json'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -882,7 +1032,7 @@ const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import "zone.js/dist/zone-error";  // Included with Angular CLI.
 
 
 /***/ }),
