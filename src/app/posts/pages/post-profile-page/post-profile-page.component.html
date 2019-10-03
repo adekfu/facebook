@@ -1,0 +1,31 @@
+<ng-container *ngIf="post">
+  <div class="card my-3">
+    <div class="card-header d-flex align-items-start">
+      <img
+        [src]="getPostAuthorAvatarUrl()"
+        class="avatar mr-3 rounded"
+        alt
+      >
+      <div class="flex-fill">
+        <h4>{{ post?.author?.name }}</h4>
+        <p>
+          <small>{{ post.createdTime | myDate }}</small>
+        </p>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <img [src]="post.images[0]" class="card-img-top" alt="...">
+      <div class="card-body">
+        <!--<h5 class="card-title">{{post.id}}</h5>-->
+        <p class="card-text">{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
+
+

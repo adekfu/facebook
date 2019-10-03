@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {PostsService} from '../../../posts/services/posts.service';
-import {IPostList} from '../../../shared/interfaces/post-list.interface';
 
 @Component({
   selector: 'app-home-page',
