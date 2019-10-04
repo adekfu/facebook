@@ -33,7 +33,6 @@ export class PostListItemComponent implements OnInit, OnChanges {
   }
 
   getPostAuthorAvatarUrl() {
-    console.log('TEST');
     if (this.post && this.post.author) {
       return this.post.author.avatarUrl;
     }
