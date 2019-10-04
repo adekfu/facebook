@@ -1,14 +1,14 @@
-import {Component, Input, OnInit} from "@angular/core";
-import fakePosts from "src/fakes/fake-post";
+import {Component, Input, OnInit} from '@angular/core';
+import {IPostList} from '../../../shared/interfaces/post-list.interface';
 
 @Component({
-  selector: "app-post-list",
-  templateUrl: "./post-list.component.html",
-  styleUrls: ["./post-list.component.scss"]
+  selector: 'app-post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
 
-  @Input() posts = null;
+  @Input() posts:IPostList = null;
 
   constructor() {
   }
@@ -16,4 +16,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
   }
 
+  addPost(post) {
+    this.posts.unshift(post);
+  }
 }
