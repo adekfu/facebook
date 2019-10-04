@@ -1,0 +1,9 @@
+<form (ngSubmit)='onSubmit()'>
+  <div class="form-group row">
+    <div class="col-10">
+      <input type="text" class="form-control" name="body"
+             placeholder="Wpisz komentarz" [(ngModel)]="comment.body">
+      <button type="submit" class="btn btn-primary">Dodaj</button>
+    </div>
+  </div>
+</form>

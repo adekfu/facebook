@@ -20,6 +20,6 @@ export class CommentListItemComponent implements OnInit {
     if (this.comment && this.comment.author) {
       return this.comment.author.avatarUrl;
     }
-    return `http://placeskull.com/50/50/FF69B4/${this.comment.id}`;
+    return `http://placeskull.com/50/50/FF69B4`;
   }
 }

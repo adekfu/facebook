@@ -9,8 +9,8 @@ import {ICommentList} from '../../../shared/interfaces/comment-list.interface';
 export class CommentListComponent implements OnInit {
 
   comments = [
-    {id: '1', body: 'BBB'},
-    {id: '2', body: 'DDD'}
+    {id: '1', body: 'Komentarz z onet.pl'},
+    {id: '2', body: 'Komentarz z wykop.pl'}
   ] as ICommentList;
 
   constructor() {
@@ -19,4 +19,8 @@ export class CommentListComponent implements OnInit {
   ngOnInit() {
   }
 
+  addComment(comment) {
+    console.log(`app comment fx(${comment.body})`, comment);
+    this.comments.push(comment);
+  }
 }
