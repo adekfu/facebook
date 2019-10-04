@@ -1,9 +1,10 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-post-list-item',
   templateUrl: './post-list-item.component.html',
-  styleUrls: ['./post-list-item.component.scss']
+  styleUrls: ['./post-list-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostListItemComponent implements OnInit, OnChanges {
 
@@ -32,6 +33,7 @@ export class PostListItemComponent implements OnInit, OnChanges {
   }
 
   getPostAuthorAvatarUrl() {
+    console.log('TEST');
     if (this.post && this.post.author) {
       return this.post.author.avatarUrl;
     }

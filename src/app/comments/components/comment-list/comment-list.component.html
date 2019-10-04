@@ -1,4 +1,13 @@
 <app-comment-list-item *ngFor="let comment of comments"
-                       (removeComment)="removeComment($event)"
+                       (removeComment)="removeCommentWithConfirmation($event)"
                        [comment]="comment"></app-comment-list-item>
 <app-comment-add-form (addComment)="addComment($event)"></app-comment-add-form>
+
+<app-popup #dialog>
+  <p class="title">Siemanko</p>
+  <p class="body">Czy na pewno?</p>
+  <div class="buttons">
+    <button  (click)="removeCommentAndDialogHide()" class="btn btn-danger">Usuń komentarz</button>
+    <button (click)="dialog.hide()" class="btn btn-light">Anuluj</button>
+  </div>
+</app-popup>

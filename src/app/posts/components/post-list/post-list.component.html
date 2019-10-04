@@ -3,5 +3,14 @@
 <app-post-list-item
   *ngFor="let post of posts"
   [post]="post"
-  (deletePostEmmiter)="deletePost($event)"
+  (deletePostEmmiter)="removePostWithConfirmation($event)"
 ></app-post-list-item>
+
+<app-popup #dialog>
+  <p class="title">Siemanko</p>
+  <p class="body">Czy na pewno?</p>
+  <div class="buttons">
+    <button  (click)="removePostAndDialogHide()" class="btn btn-danger">Usuń post</button>
+    <button (click)="dialog.hide()" class="btn btn-light">Anuluj</button>
+  </div>
+</app-popup>

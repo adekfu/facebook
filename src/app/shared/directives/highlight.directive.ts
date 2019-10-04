@@ -1,22 +1,20 @@
-import {Directive, ElementRef, HostListener, Renderer2} from "@angular/core";
+import {Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
 
 @Directive({
-  selector: "[appHighlight]"
+  selector: '[appHighlight]'
 })
 export class HighlightDirective {
 
-  @HostListener("mouseover") mouseOverHandler() {
-    console.log("mouseover");
+  @HostListener('mouseover') mouseOverHandler() {
     const $element = this.element.nativeElement;
-    this.renderer.addClass($element, "border");
-    this.renderer.addClass($element, "border-primary");
+    this.renderer.addClass($element, 'border');
+    this.renderer.addClass($element, 'border-primary');
   }
 
-  @HostListener("mouseleave") mouseLeaveHandler() {
-    console.log("mouseleave");
+  @HostListener('mouseleave') mouseLeaveHandler() {
     const $element = this.element.nativeElement;
-    this.renderer.removeClass($element, "border");
-    this.renderer.removeClass($element, "border-primary");
+    this.renderer.removeClass($element, 'border');
+    this.renderer.removeClass($element, 'border-primary');
   }
 
   constructor(private element: ElementRef,
