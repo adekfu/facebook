@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-post-list-item',
@@ -8,6 +8,7 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 export class PostListItemComponent implements OnInit, OnChanges {
 
   @Input() post = null;
+  @Output() deletePostEmmiter = new EventEmitter();
 
   constructor() {
   }
@@ -37,4 +38,7 @@ export class PostListItemComponent implements OnInit, OnChanges {
     return '';
   }
 
+  deletePost() {
+    this.deletePostEmmiter.emit(this.post);
+  }
 }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IPostList} from '../../shared/interfaces/post-list.interface';
-import {sortByOperator} from '../../shared/helpers/sorter.helper';
+import {sortBy, sortByOperator} from '../../shared/helpers/sorter.helper';
 import {environment} from '../../../environments/environment';
 import {IPost} from '../../shared/interfaces/post.interface';
 
@@ -15,7 +15,8 @@ export class PostsService {
 
   async getPosts(): Promise<IPostList> {
     const url = environment.postsUrl;
-    const response: IPostList = await this.http.get<IPostList>(url).pipe(sortByOperator('createdTime')).toPromise();
+    const response: IPostList = await this.http.get<IPostList>(url).pipe(sortByOperator<IPostList>('createdTime')).toPromise();
+    sortBy<IPost>(response, (post: IPost) => new Date(post.createdTime));
     return response;
   }
 

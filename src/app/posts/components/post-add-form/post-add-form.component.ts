@@ -39,8 +39,8 @@ export class PostAddFormComponent implements OnInit {
   onSubmit() {
     const post = this.addPostForm.getRawValue();
     this.postToSent.id = uuidv4();
-    this.postToSent.images = ['http://placeskull.com/50/50/000000'];
-    /* this.postToSent.images = [faker.image.food()];*/
+    /*    this.postToSent.images = ['http://placeskull.com/50/50/000000'];*/
+    this.postToSent.images = [faker.image.food()];
     this.postToSent.createdTime = new Date().toString();
     this.postToSent.body = post.body;
     this.postToSent.author.id = uuidv4();

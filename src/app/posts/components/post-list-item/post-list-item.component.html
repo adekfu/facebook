@@ -12,10 +12,11 @@
           <small>{{ post.createdTime | myDate }}</small>
         </a>
       </div>
+      <img src="assets/delete48.png" (click)="deletePost()"/>
     </div>
 
     <div class="card-body">
-      <ng-container *ngIf="post.image">
+      <ng-container *ngIf="!post.image">
         <img [src]="post.images[0]" class="card-img-top" alt="...">
       </ng-container>
       <div class="card-body" appHighlight>

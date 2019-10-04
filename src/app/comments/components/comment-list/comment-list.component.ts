@@ -19,4 +19,8 @@ export class CommentListComponent implements OnInit {
   addComment(comment) {
     this.comments.push(comment);
   }
+
+  removeComment(comment) {
+    this.comments.splice(this.comments.indexOf(comment), 1);
+  }
 }
