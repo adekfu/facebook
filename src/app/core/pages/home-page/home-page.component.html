@@ -1,3 +1,4 @@
+<app-loading *ngIf="isDisplayLoader()" class="mx-auto"></app-loading>
 <ng-container *ngIf="error">
   <app-error-message>
     <span class="message">Problem z siecią!</span>

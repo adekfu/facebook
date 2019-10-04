@@ -24,7 +24,10 @@ export class HomePageComponent implements OnInit {
     } catch (e) {
       this.error = e;
     }
+  }
 
+  isDisplayLoader() {
+    return !(this.posts || this.error);
   }
 
 }

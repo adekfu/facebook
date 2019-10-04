@@ -3,11 +3,19 @@
     <form [formGroup]="addPostForm" (ngSubmit)="onSubmit()">
       <div class="form-group row">
         <div class="col-9">
-          <textarea rows="3" class="form-control" name="body" placeholder="Napisz post..." formControlName="body"></textarea>
+          <textarea rows="3" class="form-control" name="body" placeholder="Napisz post..."
+                    formControlName="body"></textarea>
         </div>
         <div class="col-2">
           <button type="submit" class="btn btn-primary">Dodaj</button>
         </div>
+      </div>
+      <div class="text-danger row">
+        <!--<pre>{{body.dirty}}</pre>
+        <pre>{{body.valid}}</pre>-->
+        <ul>
+          <li *ngIf="body.dirty && body.invalid">Aby dodać post, wpisz tekst</li>
+        </ul>
       </div>
     </form>
   </div>

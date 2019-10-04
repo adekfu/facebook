@@ -8,7 +8,7 @@ import {IPostList} from '../../../shared/interfaces/post-list.interface';
 })
 export class PostListComponent implements OnInit {
 
-  @Input() posts:IPostList = null;
+  @Input() posts: IPostList = null;
 
   constructor() {
   }
